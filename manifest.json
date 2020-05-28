@@ -2,7 +2,7 @@
   "name": "Open Captions for Desktop",
   "short_name": "Captions",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#000",
   "theme_color": "#000",
   "description": "Generate open captions from the user's microphone input.",
