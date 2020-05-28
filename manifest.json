@@ -1,7 +1,7 @@
 {
   "name": "Open Captions for Desktop",
   "short_name": "Captions",
-  "start_url": ".",
+  "start_url": "https://open-captions-pwa.now.sh/",
   "display": "fullscreen",
   "background_color": "#000",
   "theme_color": "#000",
