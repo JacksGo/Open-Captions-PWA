@@ -3,6 +3,10 @@ const recognition = new webkitSpeechRecognition();
 
 let is_stopped = true;
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/js/service-worker.js');
+}
+
 function processResults(e) {
   // console.log(e);
   // Keep our own list of past results.

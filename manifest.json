@@ -4,6 +4,7 @@
   "start_url": ".",
   "display": "fullscreen",
   "background_color": "#000",
+  "theme_color": "#000",
   "description": "Generate open captions from the user's microphone input.",
   "icons": [{
     "src": "images/icon_48.png",
@@ -28,6 +29,10 @@
   }, {
     "src": "images/icon_192.png",
     "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "images/icon_512.png",
+    "sizes": "512x512",
     "type": "image/png"
   }]
 }
