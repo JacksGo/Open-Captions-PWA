@@ -53,7 +53,7 @@ class speechResultsDOMManager {
     }
     
     // Flatten out the SpeechRecognitionResult object and store it.
-    console.log(result);
+    // console.log(result);
     global_test = result;
     this.#results[index] = {transcript: result[0].transcript.trim(), confidence: result[0].confidence, isFinal: result.isFinal};
     

@@ -4,7 +4,7 @@ const recognition = new webkitSpeechRecognition();
 let is_stopped = true;
 
 function processResults(e) {
-  console.log(e);
+  // console.log(e);
   // Keep our own list of past results.
   // This will allow us to animate old subtitles rolling off the top.
   resultsManager.set(e.resultIndex, e.results[e.resultIndex]);
