@@ -34,5 +34,6 @@
     "src": "images/icon_512.png",
     "sizes": "512x512",
     "type": "image/png"
-  }]
+  }],
+  "scope": "/"
 }
