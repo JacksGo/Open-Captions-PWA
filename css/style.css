@@ -10,6 +10,10 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+
+  --font-size: 32px;
+  --line-height: 38px;
+  --line-limit: 5;
 }
 
 /*
@@ -20,8 +24,8 @@ body {
 
 #subcont {
   width: 840px;
-  height: calc(3 * 38px);
-  max-height: calc(3 * 38px);
+  height: calc(var(--line-limit) * var(--line-height));
+  max-height: calc(var(--line-limit) * var(--line-height));
   overflow: hidden;
   position: relative;
 }
@@ -35,6 +39,12 @@ body {
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+
+.subgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .prelim {
@@ -55,3 +65,10 @@ body {
   from { margin-bottom: -38px; }
   to { margin-bottom: 0px; }
 }
+
+.subgroup:nth-last-child(1) {opacity: 1;}
+.subgroup:nth-last-child(2) {opacity: 0.8;}
+.subgroup:nth-last-child(3) {opacity: 0.6;}
+.subgroup:nth-last-child(4) {opacity: 0.4;}
+.subgroup:nth-last-child(5) {opacity: 0.2;}
+.subgroup:nth-last-child(n+6) {opacity: 0;}

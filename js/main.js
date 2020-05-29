@@ -7,6 +7,7 @@ function processResults(e) {
   // console.log(e);
   // Keep our own list of past results.
   // This will allow us to animate old subtitles rolling off the top.
+  
   resultsManager.set(e.resultIndex, e.results[e.resultIndex]);
 }
 
@@ -19,8 +20,10 @@ function startRecognition() {
 // let customList = new customGrammarList(["bruh"]).toGrammarList();
 // recognition.grammars = customList;
 
+// If you turned off interim results, it would become safe to split each line.
+
 recognition.continuous = true;
-recognition.interimResults = true;
+recognition.interimResults = false;
 recognition.lang = 'en-US';
 recognition.addEventListener("result", processResults);
 recognition.addEventListener("start", function() { is_stopped = false; });

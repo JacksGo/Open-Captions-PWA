@@ -37,28 +37,33 @@ class speechResultsDOMManager {
   }
   
   set(index, result) {
-    // If the specified index doesn't exist...
-    if (index > this.#results.length-1) {
-      
-      // A new subtitle element will be created.
+    
+    const subGroup = document.createElement("div");
+    subGroup.classList.add("subgroup");
+    
+    let splitLines = splitStringToLines(result[0].transcript.trim());
+    
+    for (let line of splitLines) {    
       const newLine = document.createElement("div");
       newLine.classList.add("sub");
+      newLine.textContent = line;
       
-      // Add the line data to the DOM element list.
-      this.#DOMList[index] = newLine;
-      
-      // The length of the DOMList and the results list are the same.
-      // Do not get an element by its position in the DOM, because this could be inaccurate.
-      this.#containerElem.appendChild(newLine);
+      subGroup.appendChild(newLine);
     }
     
+    // Add the line data to the DOM element list.
+    this.#DOMList[index] = subGroup;
+      
+    // The length of the DOMList and the results list are the same.
+    // Do not get an element by its position in the DOM, because this could be inaccurate.
+    this.#containerElem.appendChild(subGroup);
+    
     // Flatten out the SpeechRecognitionResult object and store it.
-    // console.log(result);
     global_test = result;
-    this.#results[index] = {transcript: result[0].transcript.trim(), confidence: result[0].confidence, isFinal: result.isFinal};
+    this.#results[index] = {transcript: splitLines, confidence: result[0].confidence, isFinal: result.isFinal};
     
     // Set the text of the current line.
-    this.#DOMList[index].textContent = this.#results[index].transcript;
+    this.#DOMList[index] = subGroup;
     
     // Make interim results slightly transparent. 
     if (this.#results[index].isFinal) {
